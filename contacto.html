@@ -33,6 +33,169 @@
             </ul>
         </nav>
     </header>
+    <main role="main">
+        <section id="formulario-contacto">
+    <h2>Solicita tu Presupuesto</h2>
+    <p>Completa el formulario y te contactaremos para discutir tu proyecto.</p>
+
+    <form action="/contacto" method="POST" novalidate>
+        <fieldset>
+            <legend>Información de Contacto</legend>
+
+            <div>
+                <label for="nombre">Nombre completo *</label>
+                <input 
+                    type="text" 
+                    id="nombre" 
+                    name="nombre" 
+                    required 
+                    minlength="2" 
+                    maxlength="50"
+                    aria-describedby="nombre-help"
+                    placeholder="Tu nombre completo"
+                >
+                <div id="nombre-help">Mínimo 2 caracteres</div>
+            </div>
+
+            <div>
+                <label for="email">Correo electrónico *</label>
+                <input 
+                    type="email" 
+                    id="email" 
+                    name="email" 
+                    required
+                    aria-describedby="email-help"
+                    placeholder="tu@email.com"
+                >
+                <div id="email-help">Ingresa un email válido</div>
+            </div>
+
+            <div>
+                <label for="telefono">Teléfono</label>
+                <input 
+                    type="tel" 
+                    id="telefono" 
+                    name="telefono"
+                    pattern="[0-9+\-\s\(\)]{10,}"
+                    title="Número de teléfono válido"
+                    placeholder="+1 (234) 567-890"
+                >
+                <div>Opcional - Para contacto directo</div>
+            </div>
+
+            <div>
+                <label for="empresa">Empresa/Organización</label>
+                <input 
+                    type="text" 
+                    id="empresa" 
+                    name="empresa"
+                    maxlength="100"
+                    placeholder="Nombre de tu empresa"
+                >
+            </div>
+        </fieldset>
+
+        <fieldset>
+            <legend>Detalles del Proyecto</legend>
+
+            <div>
+                <label for="tipo-proyecto">Tipo de proyecto *</label>
+                <select id="tipo-proyecto" name="tipo-proyecto" required aria-describedby="tipo-help">
+                    <option value="">Selecciona un tipo de proyecto</option>
+                    <option value="sitio-web-basico">Sitio Web Básico</option>
+                    <option value="sitio-web-avanzado">Sitio Web Avanzado</option>
+                    <option value="e-commerce">E-commerce</option>
+                    <option value="aplicacion-web">Aplicación Web</option>
+                    <option value="consultoria">Consultoría Técnica</option>
+                    <option value="otro">Otro</option>
+                </select>
+                <div id="tipo-help">Selecciona el tipo de proyecto que necesitas</div>
+            </div>
+
+            <div>
+                <label for="presupuesto">Presupuesto estimado</label>
+                <select id="presupuesto" name="presupuesto">
+                    <option value="">Selecciona un rango</option>
+                    <option value="500-1000">$500 - $1,000</option>
+                    <option value="1000-2500">$1,000 - $2,500</option>
+                    <option value="2500-5000">$2,500 - $5,000</option>
+                    <option value="5000-10000">$5,000 - $10,000</option>
+                    <option value="10000+">$10,000+</option>
+                    <option value="no-seguro">No estoy seguro</option>
+                </select>
+            </div>
+
+            <div>
+                <label for="fecha">¿Cuándo necesitas el proyecto?</label>
+                <input 
+                    type="date" 
+                    id="fecha" 
+                    name="fecha" 
+                    min="2024-01-01" 
+                    max="2024-12-31"
+                >
+            </div>
+
+            <div>
+                <label for="mensaje">Describe tu proyecto *</label>
+                <textarea 
+                    id="mensaje" 
+                    name="mensaje" 
+                    required
+                    minlength="10" 
+                    maxlength="1000"
+                    rows="6"
+                    aria-describedby="mensaje-help"
+                    placeholder="Cuéntanos sobre tu proyecto, objetivos, funcionalidades que necesitas, etc."
+                ></textarea>
+                <div id="mensaje-help">Mínimo 10 caracteres. Sé específico para recibir un presupuesto más preciso.</div>
+            </div>
+        </fieldset>
+
+        <fieldset>
+            <legend>Servicios de interés</legend>
+            <div>
+                <label>
+                    <input type="checkbox" name="servicios" value="desarrollo">
+                    Desarrollo Web
+                </label>
+            </div>
+            <div>
+                <label>
+                    <input type="checkbox" name="servicios" value="diseno">
+                    Diseño UX/UI
+                </label>
+            </div>
+            <div>
+                <label>
+                    <input type="checkbox" name="servicios" value="consultoria">
+                    Consultoría
+                </label>
+            </div>
+        </fieldset>
+
+        <div>
+            <label>
+                <input type="checkbox" name="newsletter" value="si">
+                Suscribirme al boletín de noticias y tips de desarrollo web
+            </label>
+        </div>
+
+        <div>
+            <label>
+                <input type="checkbox" name="terms" value="acepto" required>
+                Acepto la <a href="privacidad.html" target="_blank">Política de Privacidad</a> y los <a href="terminos.html" target="_blank">Términos de Servicio</a> *
+            </label>
+        </div>
+
+        <div>
+            <button type="submit">Enviar Solicitud</button>
+            <button type="reset">Limpiar Formulario</button>
+        </div>
+    </form>
+</section>
+
+    </main>
     
     <footer role="contentinfo">
         <section>
